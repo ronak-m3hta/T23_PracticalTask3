@@ -7,6 +7,9 @@ in future development of code"""
 while True:
     try:
         age = int(input("Please enter your age (as a whole/integer number): "))
+        if age <0:
+            print("Please enter a non-negative value for age")
+            continue
     except ValueError:
         print("Value input not recognised as an integer, please try again")
         continue
