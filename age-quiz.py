@@ -1,21 +1,28 @@
-#Program responds to user based on input age
+# Program responds to user based on input age
 """Technically negative whole numbers can be input but this will default to
 age being less than first age condition, this can be potentially corrected 
 in future development of code"""
 
-#Request age input and store as integer
-age = int(input("Please enter your age (as a whole/integer number): "))
+# Request age input and store as integer
+while True:
+    try:
+        age = int(input("Please enter your age (as a whole/integer number): "))
+    except ValueError:
+        print("Value input not recognised as an integer, please try again")
+        continue
+    else:
+        break
 
-#Set maximum age as 100
+# Set maximum age as 100
 max_age = 100
 
-#Set variables for age values that will be used as conditions to check against
+# Set variables for age values that will be used as conditions to check against
 age_condition1 = 13
 age_condition2 = 21
 age_condition3 = 40
 age_condition4 = 65
 
-#Set variables to store output statements to be used when certain conditions are met
+# Set variables to store output statements to be used when certain conditions are met
 
 output_statement1 = "You qualify for the kiddle discount."
 output_statement2 = "Age is but a number."
@@ -30,7 +37,7 @@ Setting the age conditions and statements as variables allows for future changes
 without having to reset the rest of the code
 """
 
-#Start conditioning on various ages to output a response
+# Start conditioning on various ages to output a response
 # First condition based on ages strictly below age_condition 1
 if age < age_condition1:
     print(output_statement1)
@@ -52,4 +59,3 @@ elif age <= max_age:
 #(age checked is max_age <age)
 else:
     print(output_statement6)
-
